@@ -50,7 +50,6 @@ public class RoleController {
 
     @DeleteMapping(value = "/api/role/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") Long id) {
-        final Optional<Role> role = roleRepository.findById(id);
         roleRepository.deleteById(id);
 
         return new ResponseEntity<>(HttpStatus.OK);

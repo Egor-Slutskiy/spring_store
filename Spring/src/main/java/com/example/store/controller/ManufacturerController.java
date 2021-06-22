@@ -50,7 +50,6 @@ public class ManufacturerController {
 
     @DeleteMapping(value = "/api/manufacturer/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") Long id) {
-        final Optional<Manufacturer> manufacturer = manufacturerRepository.findById(id);
         manufacturerRepository.deleteById(id);
 
         return new ResponseEntity<>(HttpStatus.OK);

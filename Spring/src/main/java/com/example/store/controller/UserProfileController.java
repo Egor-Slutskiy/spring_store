@@ -50,7 +50,6 @@ public class UserProfileController {
 
     @DeleteMapping(value = "/api/userProfile/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") Long id) {
-        final Optional<UserProfile> userProfile = userProfileRepository.findById(id);
         userProfileRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
 

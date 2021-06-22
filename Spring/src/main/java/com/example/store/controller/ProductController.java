@@ -50,7 +50,6 @@ public class ProductController {
 
     @DeleteMapping(value = "/api/product/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") Long id) {
-        final Optional<Product> product = productRepository.findById(id);
         productRepository.deleteById(id);
 
         return new ResponseEntity<>(HttpStatus.OK);
